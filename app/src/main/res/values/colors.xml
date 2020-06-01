@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="detailcolor">#545454</color>
+    <color name="white">#ffffff</color>
+    <color name="featuredcolor">#E61C15</color>
+    <color name="discount_color">#555555</color>
+    <color name="line_cut_color">#8b8b8b</color>
+    <color name="black">#000</color>
+    <color name="red">#F00</color>
+</resources>

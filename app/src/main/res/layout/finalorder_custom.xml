@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/l1"
+       android:orientation="horizontal"
+       android:weightSum="1"
+       >
+
+
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.5"
+           android:orientation="vertical"
+           android:id="@+id/product_layout"
+           >
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="5dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:text="Product Name"
+               android:id="@+id/productname"
+               android:textColor="@color/detailcolor"/>
+
+
+           <!--<TextView-->
+               <!--android:layout_width="match_parent"-->
+               <!--android:layout_height="wrap_content"-->
+               <!--android:layout_marginLeft="10dp"-->
+               <!--android:layout_marginRight="10dp"-->
+               <!--android:layout_marginBottom="10dp"-->
+               <!--android:text="Promo Products"-->
+               <!--android:id="@+id/promoproducts"-->
+               <!--android:textColor="@color/metro_detailcolor"/>-->
+
+
+
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/productname"
+               android:id="@+id/additionallayout"
+               android:background="@drawable/featured"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginBottom="10dp">
+
+               <TextView android:id="@+id/promoproducts"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Featured Text"
+                   android:textColor="@color/white"
+                   android:padding="4dp"
+                   />
+
+           </RelativeLayout>
+
+       </LinearLayout>
+
+
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.25"
+           android:layout_margin="10dp"
+           android:text="5 KG"
+           android:id="@+id/quantity"
+           android:gravity="center"
+           android:textColor="@color/detailcolor"/>
+
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.25"
+           android:id="@+id/amount_layout"
+           android:orientation="vertical"
+           android:weightSum="1"
+           android:layout_margin="10dp">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Rs.0.00"
+               android:layout_gravity="center"
+               android:id="@+id/amount"
+               android:textColor="@color/discount_color"/>
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/discountlayout"
+               android:layout_weight="0.5"
+               android:gravity="center">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Rs.0.00"
+                   android:id="@+id/discountamount"
+                   android:textColor="@color/discount_color"/>
+
+               <RelativeLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="1dp"
+                   android:layout_alignLeft="@+id/discountamount"
+                   android:layout_alignRight="@+id/discountamount"
+                   android:layout_centerInParent="true"
+                   android:background="@color/line_cut_color"></RelativeLayout>
+
+
+
+           </RelativeLayout>
+
+
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/l1"
+        android:background="@color/metro_grey"
+        android:id="@+id/line_below"></RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,1602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/orderdetails_heading"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:background="#e3e9eb">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Product Name"
+                android:textColor="#7f7f7f"
+                android:layout_weight="0.5"
+                android:layout_margin="10dp"
+                android:gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textColor="#7f7f7f"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textColor="#7f7f7f"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderdetails_heading"
+            android:id="@+id/orderdetails_list"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderdetails_list"
+            android:id="@+id/grocerybox"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/groceryheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Grocery Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/groceryheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/subtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/subtotal_txt"
+                android:layout_below="@+id/groceryheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/subtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/delivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/delivery_txt"
+                android:layout_below="@+id/subtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/free"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/delivery_txt"
+                android:layout_below="@+id/delivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Voucher:"
+                android:id="@+id/voucher"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/free"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/couponamount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/voucher"
+                android:layout_below="@+id/voucher"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/discount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/couponamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/discountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/discount"
+                android:layout_below="@+id/discount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/payment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/discountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/paymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/payment"
+                android:layout_below="@+id/payment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/deliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/paymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/deliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/deliverydate"
+                android:layout_below="@+id/deliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/deliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/deliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/deliverytimeval"
+                android:textSize="16dp"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/totallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/total"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/total_amount"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Grocery Order #"
+                    android:textColor="#000"
+                    android:id="@+id/grocery_order"
+                    android:layout_below="@+id/total_amount"/>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/grocerybox"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nonfoodbox"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/nonfoodheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Electronics Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nonfoodheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/nonfoodsubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nonfoodsubtotal_txt"
+                android:layout_below="@+id/nonfoodheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfoodsubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nonfoodsubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/nonfooddelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nonfooddelivery_txt"
+                android:layout_below="@+id/nonfoodsubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfoodfree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nonfooddelivery_txt"
+                android:layout_below="@+id/nonfooddelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Voucher:"
+                android:id="@+id/nonfoodvoucher"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nonfoodfree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfoodcouponamount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nonfoodvoucher"
+                android:layout_below="@+id/nonfoodvoucher"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/nonfooddiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nonfoodcouponamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfooddiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nonfooddiscount"
+                android:layout_below="@+id/nonfooddiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/nonfoodpayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nonfooddiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfoodpaymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nonfoodpayment"
+                android:layout_below="@+id/nonfoodpayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/nonfooddeliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nonfoodpaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfooddeliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nonfooddeliverydate"
+                android:layout_below="@+id/nonfooddeliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/nonfooddeliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/nonfooddeliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/nonfooddeliverytimeval"
+                android:textSize="16dp"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nonfooddeliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/nonfoodtotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/nonfoodtotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/nonfoodtotal_amount"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Electronics Order #"
+                    android:textColor="#000"
+                    android:id="@+id/nonfood_order"
+                    android:layout_below="@+id/nonfoodtotal_amount"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nonfoodbox"
+            android:id="@+id/hamperbox"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/hamperheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Hamper Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hamperheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/hampersubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/hampersubtotal_txt"
+                android:layout_below="@+id/hamperheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hampersubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hampersubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/hamperdelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/hamperdelivery_txt"
+                android:layout_below="@+id/hampersubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hamperfree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/hamperdelivery_txt"
+                android:layout_below="@+id/hamperdelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/hamperdiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/hamperfree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hamperdiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/hamperdiscount"
+                android:layout_below="@+id/hamperdiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/hamperpayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/hamperdiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hamperpaymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/hamperpayment"
+                android:layout_below="@+id/hamperpayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/hamperdeliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/hamperpaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hamperdeliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/hamperdeliverydate"
+                android:layout_below="@+id/hamperdeliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/hamperdeliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/hamperdeliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/hamperdeliverytimeval"
+                android:textSize="16dp"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hamperdeliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/hampertotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/hampertotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/hampertotal_amount"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Hamper Order #"
+                    android:textColor="#000"
+                    android:id="@+id/hamper_order"
+                    android:layout_below="@+id/hampertotal_amount"/>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hamperbox"
+            android:id="@+id/qurbanibox"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/qurbaniheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Qurbani Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qurbaniheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/qurbanisubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/qurbanisubtotal_txt"
+                android:layout_below="@+id/qurbaniheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanisubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qurbanisubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/qurbanidelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/qurbanidelivery_txt"
+                android:layout_below="@+id/qurbanisubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanifree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/qurbanidelivery_txt"
+                android:layout_below="@+id/qurbanidelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/qurbanidiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/qurbanifree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanidiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/qurbanidiscount"
+                android:layout_below="@+id/qurbanidiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/qurbanipayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/qurbanidiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanipaymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/qurbanipayment"
+                android:layout_below="@+id/qurbanipayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/qurbanideliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/qurbanipaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanideliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/qurbanideliverydate"
+                android:layout_below="@+id/qurbanideliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/qurbanideliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/qurbanideliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/qurbanideliverytimeval"
+                android:textSize="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qurbanideliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/qurbanitotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/qurbanitotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/qurbanitotal_amount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Qurbani Order #"
+                    android:textColor="#000"
+                    android:id="@+id/qurbani_order"
+                    android:layout_below="@+id/qurbanitotal_amount"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/qurbanibox"
+            android:id="@+id/zakatbox"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/zakatheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Ration Hamper Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zakatheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/zakatsubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/zakatsubtotal_txt"
+                android:layout_below="@+id/zakatheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/zakatsubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zakatsubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/zakatdelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/zakatdelivery_txt"
+                android:layout_below="@+id/zakatsubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/zakatfree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/zakatdelivery_txt"
+                android:layout_below="@+id/zakatdelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/zakatdiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zakatfree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/zakatdiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/zakatdiscount"
+                android:layout_below="@+id/zakatdiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/zakatpayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zakatdiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+
+                android:textColor="#000"
+                android:id="@+id/zakatpaymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/zakatpayment"
+                android:layout_below="@+id/zakatpayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/zakatdeliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zakatpaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/zakatdeliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/zakatdeliverydate"
+                android:layout_below="@+id/zakatdeliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/zakatdeliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/zakatdeliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/zakatdeliverytimeval"
+                android:textSize="16dp"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zakatdeliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/zakattotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/zakattotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/zakattotal_amount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Ration Hamper Order #"
+                    android:textColor="#000"
+                    android:id="@+id/zakat_order"
+                    android:layout_below="@+id/zakattotal_amount"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/zakatbox"
+            android:layout_marginTop="10dp"
+            android:id="@+id/apparelbox"
+            android:visibility="visible"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/apparelheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Apparel Cart Details"
+                    android:textColor="#7f7f7f"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apparelheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/apparelsubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/apparelsubtotal_txt"
+                android:layout_below="@+id/apparelheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/apparelsubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apparelsubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/appareldelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/appareldelivery_txt"
+                android:layout_below="@+id/apparelsubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/apparelfree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/appareldelivery_txt"
+                android:layout_below="@+id/appareldelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Voucher:"
+                android:id="@+id/apparelvoucher"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/apparelfree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/apparelcouponamount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/apparelvoucher"
+                android:layout_below="@+id/apparelvoucher"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/appareldiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/apparelcouponamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/appareldiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/appareldiscount"
+                android:layout_below="@+id/appareldiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/apparelpayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/appareldiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/apparelpaymentval"
+                android:textSize="16dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/apparelpayment"
+                android:layout_below="@+id/apparelpayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/appareldeliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/apparelpaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/appareldeliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/appareldeliverydate"
+                android:layout_below="@+id/appareldeliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/appareldeliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/appareldeliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/appareldeliverytimeval"
+                android:textSize="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appareldeliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/appareltotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/appareltotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/appareltotal_amount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Apparel Order #"
+                    android:textColor="#000"
+                    android:id="@+id/apparel_order"
+                    android:layout_below="@+id/appareltotal_amount"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apparelbox"
+            android:id="@+id/organicshopbox"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:id="@+id/organicshopheader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Organic Shop Cart Details"
+                    android:textColor="#7f7f7f"
+                    android:id="@+id/organicshoptitle"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/organicshopheader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Subtotal:"
+                android:id="@+id/organicshopsubtotal_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/organicshopsubtotal_txt"
+                android:layout_below="@+id/organicshopheader"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopsubtotal_val"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/organicshopsubtotal_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Packing / Delivery Fee :"
+                android:id="@+id/organicshopdelivery_txt"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/organicshopdelivery_txt"
+                android:layout_below="@+id/organicshopsubtotal_txt"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopfree"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/organicshopdelivery_txt"
+                android:layout_below="@+id/organicshopdelivery_txt"
+                android:layout_marginTop="10dp"
+                android:text="Voucher:"
+                android:id="@+id/organicshopvoucher"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/organicshopfree"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopcouponamount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/organicshopvoucher"
+                android:layout_below="@+id/organicshopvoucher"
+                android:layout_marginTop="10dp"
+                android:text="Discount"
+                android:id="@+id/organicshopdiscount"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/organicshopcouponamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopdiscountamount"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/organicshopdiscount"
+                android:layout_below="@+id/organicshopdiscount"
+                android:layout_marginTop="10dp"
+                android:text="Payment Mode:"
+                android:id="@+id/organicshoppayment"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/organicshopdiscountamount"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshoppaymentval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/organicshoppayment"
+                android:layout_below="@+id/organicshoppayment"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Date:"
+                android:id="@+id/organicshopdeliverydate"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/organicshoppaymentval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopdeliverydateval"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/organicshopdeliverydate"
+                android:layout_below="@+id/organicshopdeliverydate"
+                android:layout_marginTop="10dp"
+                android:text="Delivery/PickUp Time:"
+                android:id="@+id/organicshopdeliverytime"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/organicshopdeliverydateval"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000"
+                android:id="@+id/organicshopdeliverytimeval"
+                android:textSize="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/organicshopdeliverytimeval"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/organicshoptotallayout"
+                android:textSize="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    android:textColor="#000"
+                    android:id="@+id/organicshoptotal"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:id="@+id/organicshoptotal_amount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Your Organic Shop Order #"
+                    android:textColor="#000"
+                    android:id="@+id/organicshop_order"
+                    android:layout_below="@+id/organicshoptotal_amount"
+                    />
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
